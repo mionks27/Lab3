@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Departments</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+
+<body class="container">
+
+    <div th:replace="fragments/fragmento.html :: barraSuperior(actual='department')"></div>
+
+    <h2>Lista Departamentos</h2>
+
+    <a th:href="@{/search}" class="btn btn-primary mt-4 mb-4" >Regresar</a>
+
+    <table class="table table-sm">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Puesto</th>
+        </tr>
+        <tr th:each="d : ${listaEmployees}">
+            <td th:text="${d.firstname}"></td>
+            <td th:text="${d.lastname}"></td>
+            <td th:text="${d.hiredate}"></td>
+            <td th:text="${d.enddate}"></td>
+            <td th:text="${d.jobtitle}"></td>
+        </tr>
+    </table>
+</body>
+</html>

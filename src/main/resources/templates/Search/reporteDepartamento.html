@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Departments</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+</head>
+
+<body class="container">
+
+<div th:replace="fragments/fragmento.html :: barraSuperior(actual='department')"></div>
+
+<h2>Lista Departamentos</h2>
+
+<a th:href="@{/search}" class="btn btn-primary mt-4 mb-4" >Regresar</a>
+
+<table class="table table-sm">
+    <tr>
+        <th>Pais</th>
+        <th>Ciudad</th>
+        <th>Cantidad</th>
+    </tr>
+    <tr th:each="d : ${listaDepartamentos}">
+        <td th:text="${d.countryname}"></td>
+        <td th:text="${d.regionname}"></td>
+        <td th:text="${d.cantidad}"></td>
+    </tr>
+</table>
+</body>
+</html>

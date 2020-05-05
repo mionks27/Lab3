@@ -19,6 +19,13 @@ public class SearchController {
 
         return "Search/indice";
     }
+
+    @GetMapping("reporteSalario")
+    public String salarioMaximo(Model model){
+        model.addAttribute("listaSalarios", employeesRepository.findAll());
+        return "Search/reporteSalarioMax";
+    }
+
     @GetMapping("reporteEmployee")
     public String employeeSalario(Model model){
         model.addAttribute("listaEmployees", employeesRepository.obtenerEmpleadoSalario());

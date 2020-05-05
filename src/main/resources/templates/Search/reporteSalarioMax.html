@@ -6,13 +6,14 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>Reporte Gerentes</title>
+    <title>Reporte Salario Máximo</title>
 </head>
+
 <body class="container">
 
 
 
-<h2>Reporte de Gerentes con Experiencia</h2>
+<h2>Reporte de Salario Máximo por Departamento</h2>
 
 <!-- ESTE ES EL FRAGMENTO UTILIZADO -->
 <div th:insert="Fragments/fragments.html :: boton"></div>
@@ -23,13 +24,13 @@
         <th>Departamento</th>
         <th>Nombre</th>
         <th>Apellido</th>
-        <th>Sueldo</th>
+        <th>ciudad</th>
     </tr>
-    <tr th:each="d : ${listaGerentes}">
-        <td th:text="${d.department}"></td>
-        <td th:text="${d.firstname}"></td>
+    <tr th:each="d : ${listaSalarios}">
+        <td th:text="${d.departamento.departmentName}"></td>
+        <td th:text="${d.firstName}"></td>
         <td th:text="${d.lastName}"></td>
-        <td th:text="${d.salary}"></td>
+        <td th:text="${d.departamento.locacion.city}"></td>
     </tr>
 </table>
 </body>

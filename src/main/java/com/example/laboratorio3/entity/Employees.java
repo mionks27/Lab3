@@ -32,7 +32,8 @@ public class Employees {
     private
     DepartmentEntity departamento;
     private String password;
-    Integer enable;
+    private Integer enabled;
+
 
 
     public int getEmployee_id() {
@@ -129,5 +130,14 @@ public class Employees {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public Integer getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Integer enabled) {
+        this.enabled = enabled;
     }
 }
